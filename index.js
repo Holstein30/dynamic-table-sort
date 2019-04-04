@@ -20,9 +20,22 @@ function loadTableData(personData) {
   tableBody.innerHTML = dataHtml;
 }
 
-function sortColumn(columnName){
-    const dataType = typeof personData[0][columnName];
-    sortDirection = !sortDirection;
+function sortColumn(columnName) {
+  const dataType = typeof personData[0][columnName];
+  sortDirection = !sortDirection;
 
-    switch 
+  switch (dataType) {
+    case "number":
+      sortNumberColumn(sortDirection, columnName);
+      break;
+  }
+  loadTableData(personData);
+}
+
+function sortNumberColumn(sort, columnName) {
+  personData = personData.sort((p1, p2) => {
+    return sort
+      ? p1[columnName] - p2[columnName]
+      : p2[columnName] - p1[columnName];
+  });
 }
