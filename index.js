@@ -16,5 +16,13 @@ function loadTableData(personData) {
   for (let person of personData) {
     dataHtml += `<tr><td>${person.name}</td><td>${person.age}</td></tr>`;
   }
-  console.log(dataHtml);
+
+  tableBody.innerHTML = dataHtml;
+}
+
+function sortColumn(columnName){
+    const dataType = typeof personData[0][columnName];
+    sortDirection = !sortDirection;
+
+    switch 
 }
