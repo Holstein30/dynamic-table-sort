@@ -1,1 +1,1 @@
-# Dynamic Table Sort
+# Dynamic Table Sort using Vanilla JS
